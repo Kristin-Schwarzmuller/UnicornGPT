@@ -77,4 +77,13 @@ Example:
 Turtle, how much cake should I eat today, please?
 ```
 
-Note: Azure responses are typically faster than Ollama.
+Note: 
+
+1) Azure responses are typically faster than Ollama.
+2) You can adjust the following parameters in main.py to configure the behavior of UnicornGPT and to suit your setup and preferences.:
+
+- execution_env: Specifies the environment in which the application runs. Use RunEnv.LOCAL for - local execution with Ollama or RunEnv.AZURE to run using Azure cloud resources.
+- azure_model: The name of the Azure-based language model to use when running in the Azure - environment (e.g., "Ministral-3B").
+- ollama_model: The name and version of the local language model to use with Ollama (e.g., - "llama3:latest").
+- speach2text_model_path: The file path to the speech-to-text model directory (e.g., "./data/- models/vosk-model-en-us-0.42-gigaspeech").
+- end_keyword: The keyword that signals the end of user speech input (e.g., "please").
