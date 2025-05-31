@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Initialize the application
     # Change these parameters to your needs
     # =====================================
-    execution_env = RunEnv.LOCAL  # or RunEnv.DOCKER, RunEnv.AZURE
+    execution_env = RunEnv.LOCAL  # or RunEnv.LOCAL, RunEnv.AZURE
     azure_model = "Ministral-3B"
     ollama_model = "llama3:latest"
     speach2text_model_path = "./data/models/vosk-model-en-us-0.42-gigaspeech"
