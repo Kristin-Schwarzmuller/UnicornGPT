@@ -9,12 +9,13 @@ if __name__ == "__main__":
     """
     Main entry point for the UnicornGPT application.
     Initializes the application, sets up the environment, and starts the main loop.
-    Continuously listens for user input, processes it, and generates responses until an error occurs or the user exits.
+    Continuously listens for user input, processes it, 
+    and generates responses until an error occurs or the user exits.
     """
     # Initialize the application
     # Change these parameters to your needs
     # =====================================
-    execution_env = RunEnv.AZURE  
+    execution_env = RunEnv.LOCAL  # or RunEnv.DOCKER, RunEnv.AZURE
     azure_model = "Ministral-3B"
     ollama_model = "llama3:latest"
     speach2text_model_path = "./data/models/vosk-model-en-us-0.42-gigaspeech"
@@ -22,15 +23,14 @@ if __name__ == "__main__":
     # =====================================
 
     speech2text_engine = Speech2Text(speach2text_model_path, end_keyword)
-    unicorn = UnicornGPT(execution=execution_env, 
-                        azure_model=azure_model, 
-                        ollama_model=ollama_model)
-    
+    unicorn = UnicornGPT(
+        execution=execution_env, azure_model=azure_model, ollama_model=ollama_model
+    )
 
     while True:
         try:
             # Define character
-            text2speech_engine = Text2Speech() # within the loop to change voice
+            text2speech_engine = Text2Speech()  # within the loop to change voice
             sweets = Fun4Context.get_one()
             text2speech_engine.do("Choose your character.")
             character = speech2text_engine.init()
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             # Get voice input
             message = speech2text_engine.do(character)
             print(f"Message: {message}")
-    
+
             answer2everything = unicorn.chat(message, character, sweets)
 
             # Get voice output
@@ -49,7 +49,7 @@ if __name__ == "__main__":
             log_time()
             print("Done!")
 
-        except Exception as err:  
+        except Exception as err:
             print("Exiting... after error: ", err)
             break
 

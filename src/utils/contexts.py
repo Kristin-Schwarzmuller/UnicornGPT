@@ -3,7 +3,9 @@ from enum import Enum
 
 
 class Character4Context(Enum):
-    """Character4Context" is an enumeration of whimsical characters that can be used in various applications, such as games or creative writing. Each character represents a playful and imaginative persona that can inspire creativity and joy."""
+    """Character4Context" is an enumeration of whimsical characters that can be used
+    in various applications, such as games or creative writing. Each character
+    represents a playful and imaginative persona that can inspire creativity and joy."""
 
     UNICORN = ("Sparkly and Rainbow-Farting Unicorn", "unicorn")
     FLAMINGO = ("Flamingo", "flamingo")
@@ -40,7 +42,10 @@ class Character4Context(Enum):
 
 
 class Fun4Context(Enum):
-    """Fun4Context" is an enumeration of fun and whimsical contexts that can be used in various applications, such as games or creative writing. Each context represents a playful and imaginative scenario that can inspire creativity and joy."""
+    """Fun4Context" is an enumeration of fun and whimsical contexts that can be used
+    in various applications, such as games or creative writing. Each context represents
+    a playful and imaginative scenario that can inspire creativity and joy."""
+
     CHOCOLATE = "Chocolate"
     ICECREAM = "Ice Cream"
     CANDYFLOSS = "Candy Floss"

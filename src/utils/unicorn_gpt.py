@@ -4,8 +4,9 @@ from utils.easter_eggs import EasterEggs
 from chatters.azure_chatter import AzureChatter
 from chatters.ollama_chatter import OllamaChatter
 
+
 class UnicornGPT:
-    
+
     def __init__(self, execution: RunEnv, azure_model: str, ollama_model: str) -> None:
         """
         Initialize the UnicornGPT with specified execution environment and models.
@@ -63,9 +64,5 @@ class UnicornGPT:
         for egg in self.easter_eggs.easter_eggs:
             if all(keyword in message.lower() for keyword in egg.keywords):
                 return egg.what_to_say
-        
+
         return self.chatter.chat(message, character, sweets)
-
-
-
-

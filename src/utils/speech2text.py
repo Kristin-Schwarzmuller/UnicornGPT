@@ -34,7 +34,6 @@ class Speech2Text:
             input_device_index=1,  # Select microphone 1
             frames_per_buffer=4096,
         )
-        
 
     def __listen(self) -> str:
         data = self.__stream.read(
@@ -47,7 +46,7 @@ class Speech2Text:
             return recognized_text
 
         return ""
-    
+
     def __detect_character(self, recognized_text: str) -> Character4Context | None:
         if not recognized_text:
             return None
@@ -57,7 +56,7 @@ class Speech2Text:
                 return character
         return None
 
-    def init(self) -> Character4Context: 
+    def init(self) -> Character4Context:
         """
         Initialize the speech recognition by listening for a character keyword.
         Returns
@@ -70,7 +69,7 @@ class Speech2Text:
         while not character:
             recognized_text = self.__listen()
             character = self.__detect_character(recognized_text)
-        
+
         return character
 
     def do(self, character: Character4Context) -> str:

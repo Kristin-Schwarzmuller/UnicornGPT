@@ -6,6 +6,7 @@ from azure.core.credentials import AzureKeyCredential
 
 from chatters.chatter import Chatter
 
+
 class AzureChatter(Chatter):
 
     def __init__(self):
