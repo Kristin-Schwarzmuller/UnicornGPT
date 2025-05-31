@@ -1,0 +1,6 @@
+ollama
+yapper-tts
+vosk
+pyaudio
+azure-ai-inference
+dotenv
